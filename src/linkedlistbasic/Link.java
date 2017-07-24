@@ -2,9 +2,9 @@ package linkedlistbasic;
 
 public class Link
 {
-    public int key; // The public key of the link
-    public double num; // Entity/Information store in this link
-    public Link next; // Reference to the next key
+    private int key; // The public key of the link
+    private double num; // Entity/Information store in this link
+    protected Link next; // Reference to the next key
     
     public Link()
     {

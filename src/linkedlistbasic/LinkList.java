@@ -30,5 +30,58 @@ public class LinkList
         first = first.next; // Deleting
         return temp; // Return deleted link
     }   
-   
+    
+    public Link find(int inKey)
+    {
+        Link current = first;
+        
+        while (current.getKey() != inKey)
+        {
+            if (current.next == null)
+            {
+                return null;
+            }
+            else
+            {
+                current = current.next; // Go to the next link
+            }
+        }
+        
+        return current;
+    } // END find()
+    
+    public Link delete(int inKey)
+    {
+        Link current = first;
+        Link previous = first;
+        
+        while (current.getKey() != inKey)
+        {
+            if (current.next == null)
+            {
+                return null;
+            }
+            else
+            {
+                previous = current; // Go to the next 
+                current = current.next;
+            }
+        } // END WHILE
+        
+        if (current == first) // if first link
+        {
+            first = first.next; // swap the first
+        }
+        else
+        {
+            previous.next = current.next; // bypassing it
+        }
+        
+        return current;
+    }// END delete()
+    
+    public Link getFirst()
+    {
+        return first;
+    }
 }
